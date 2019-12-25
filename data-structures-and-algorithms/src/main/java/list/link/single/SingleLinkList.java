@@ -24,11 +24,11 @@ public class SingleLinkList<T> {
 
     public void add(T t) {
         if (this.head == null) {
-            head = new Node(t);
-            tail = head;
+            this.head = new Node(t);
+            this.tail = this.head;
         } else {
-            tail.next = new Node(t);
-            tail = tail.next;
+            this.tail.next = new Node(t);
+            this.tail = this.tail.next;
         }
         size++;
     }
@@ -40,6 +40,9 @@ public class SingleLinkList<T> {
         if (Objects.equals(head.data, t)) {
             head = head.next;
             size--;
+            if (size == 0) {
+                this.tail = head;
+            }
             return true;
         }
 
@@ -47,6 +50,9 @@ public class SingleLinkList<T> {
         Node currentNode = head.next;
         while (currentNode != null) {
             if (Objects.equals(currentNode.data, t)) {
+                if (this.tail == currentNode) {
+                    this.tail = preNode;
+                }
                 preNode.next = currentNode.next;
                 size--;
                 return true;

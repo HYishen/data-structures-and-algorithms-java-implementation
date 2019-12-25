@@ -24,6 +24,27 @@ public class TestSingleLinkList {
         sll.remove("c");
         Assertions.assertEquals("[a,b,d]", sll.toString());
         Assertions.assertEquals(3, sll.size());
+        sll.remove("d");
+        Assertions.assertEquals("[a,b]", sll.toString());
+        Assertions.assertEquals(2, sll.size());
+        sll.add("e");
+        Assertions.assertEquals("[a,b,e]", sll.toString());
+        Assertions.assertEquals(3, sll.size());
+        sll.remove("a");
+        sll.remove("b");
+        sll.remove("e");
+        Assertions.assertEquals("[]", sll.toString());
+        Assertions.assertEquals(0, sll.size());
+        sll.add("a");
+        sll.add("b");
+        sll.add("c");
+        Assertions.assertEquals("[a,b,c]", sll.toString());
+        Assertions.assertEquals(3, sll.size());
+        sll.remove("c");
+        sll.remove("b");
+        sll.remove("a");
+        Assertions.assertEquals("[]", sll.toString());
+        Assertions.assertEquals(0, sll.size());
     }
 
     @Test
