@@ -1,23 +1,22 @@
-package sort.select;
+package sort.merge;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
  * <pre>
- * Test select sort。
+ * Test merge sort。
  * </pre>
  *
  * @author Yishen 844147804@qq.com
  * @version 1.00.00
  */
-public class TestSelectSort {
-
+public class TestMergeSort {
     @Test
-    public void testSelectSort() {
+    public void testMergeSort() {
         int[] array = new int[]{5, 1, 2, 8, 4, 9, 6, 3, 7};
         StringBuilder sb = new StringBuilder();
-        SelectSort.selectSort(array);
+        MergeSort.mergeSort(array);
         for (int i : array) {
             sb.append(i);
         }
@@ -25,10 +24,10 @@ public class TestSelectSort {
     }
 
     @Test
-    public void testSelectSort2() {
+    public void testMergeSort2() {
         int[] array = new int[]{2, 1};
         StringBuilder sb = new StringBuilder();
-        SelectSort.selectSort(array);
+        MergeSort.mergeSort(array);
         for (int i : array) {
             sb.append(i);
         }

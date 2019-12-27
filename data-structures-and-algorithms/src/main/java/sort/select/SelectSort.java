@@ -2,7 +2,7 @@ package sort.select;
 
 /**
  * <pre>
- * insert sort。
+ * select sort。
  * </pre>
  *
  * @author Yishen 844147804@qq.com
