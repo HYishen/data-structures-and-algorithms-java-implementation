@@ -1,7 +1,7 @@
 package sort.insert;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * <pre>
@@ -21,7 +21,7 @@ public class TestInsertSort {
         for (int i : array) {
             sb.append(i);
         }
-        Assertions.assertEquals("123456789", sb.toString());
+        Assert.assertEquals("123456789", sb.toString());
     }
 
     @Test
@@ -32,6 +32,6 @@ public class TestInsertSort {
         for (int i : array) {
             sb.append(i);
         }
-        Assertions.assertEquals("12", sb.toString());
+        Assert.assertEquals("12", sb.toString());
     }
 }

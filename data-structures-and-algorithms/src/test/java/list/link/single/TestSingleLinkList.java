@@ -1,7 +1,8 @@
 package list.link.single;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * <pre>
@@ -19,50 +20,50 @@ public class TestSingleLinkList {
         sll.add("b");
         sll.add("c");
         sll.add("d");
-        Assertions.assertEquals("[a,b,c,d]", sll.toString());
-        Assertions.assertEquals(4, sll.size());
+        Assert.assertEquals("[a,b,c,d]", sll.toString());
+        Assert.assertEquals(4, sll.size());
         sll.remove("c");
-        Assertions.assertEquals("[a,b,d]", sll.toString());
-        Assertions.assertEquals(3, sll.size());
+        Assert.assertEquals("[a,b,d]", sll.toString());
+        Assert.assertEquals(3, sll.size());
         sll.remove("d");
-        Assertions.assertEquals("[a,b]", sll.toString());
-        Assertions.assertEquals(2, sll.size());
+        Assert.assertEquals("[a,b]", sll.toString());
+        Assert.assertEquals(2, sll.size());
         sll.add("e");
-        Assertions.assertEquals("[a,b,e]", sll.toString());
-        Assertions.assertEquals(3, sll.size());
+        Assert.assertEquals("[a,b,e]", sll.toString());
+        Assert.assertEquals(3, sll.size());
         sll.remove("a");
         sll.remove("b");
         sll.remove("e");
-        Assertions.assertEquals("[]", sll.toString());
-        Assertions.assertEquals(0, sll.size());
+        Assert.assertEquals("[]", sll.toString());
+        Assert.assertEquals(0, sll.size());
         sll.add("a");
         sll.add("b");
         sll.add("c");
-        Assertions.assertEquals("[a,b,c]", sll.toString());
-        Assertions.assertEquals(3, sll.size());
+        Assert.assertEquals("[a,b,c]", sll.toString());
+        Assert.assertEquals(3, sll.size());
         sll.remove("c");
         sll.remove("b");
         sll.remove("a");
-        Assertions.assertEquals("[]", sll.toString());
-        Assertions.assertEquals(0, sll.size());
+        Assert.assertEquals("[]", sll.toString());
+        Assert.assertEquals(0, sll.size());
     }
 
     @Test
     public void testSingleLinkListRemoveSingle() {
         SingleLinkList<String> sll = new SingleLinkList<>();
         sll.add("a");
-        Assertions.assertEquals("[a]", sll.toString());
-        Assertions.assertEquals(1, sll.size());
+        Assert.assertEquals("[a]", sll.toString());
+        Assert.assertEquals(1, sll.size());
         sll.remove("a");
-        Assertions.assertEquals("[]", sll.toString());
-        Assertions.assertEquals(0, sll.size());
+        Assert.assertEquals("[]", sll.toString());
+        Assert.assertEquals(0, sll.size());
     }
 
     @Test
     public void testSingleLinkListRemoveEmpty() {
         SingleLinkList<String> sll = new SingleLinkList<>();
         sll.remove("a");
-        Assertions.assertEquals("[]", sll.toString());
-        Assertions.assertEquals(0, sll.size());
+        Assert.assertEquals("[]", sll.toString());
+        Assert.assertEquals(0, sll.size());
     }
 }
