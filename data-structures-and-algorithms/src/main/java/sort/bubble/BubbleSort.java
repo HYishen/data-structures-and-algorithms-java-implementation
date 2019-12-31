@@ -9,11 +9,11 @@ package sort.bubble;
  * @version 1.00.00
  */
 public class BubbleSort {
-    public static void bubbleSort(int[] array) {
-        if (array == null || array.length <= 1) {
+    public static void bubbleSort(int[] array, int length) {
+        if (array == null || length <= 1) {
             return;
         }
-        for (int i = array.length; i > 1; i--) {
+        for (int i = length; i > 1; i--) {
             // 提前退出冒泡排序循环标志
             boolean flag = false;
             for (int j = 0; j < i - 1; j++) {

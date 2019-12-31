@@ -10,11 +10,11 @@ package sort.insert;
  */
 public class InsertSort {
 
-    public static void insertSort(int[] array) {
-        if (array == null || array.length <= 1) {
+    public static void insertSort(int[] array, int length) {
+        if (array == null || length <= 1) {
             return;
         }
-        for (int i = 1; i < array.length; i++) {
+        for (int i = 1; i < length; i++) {
             int j = i - 1;
             int value = array[i];
             for (; j >= 0; j--) {

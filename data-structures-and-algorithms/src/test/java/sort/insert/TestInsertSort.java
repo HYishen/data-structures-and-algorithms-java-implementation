@@ -2,6 +2,7 @@ package sort.insert;
 
 import org.junit.Assert;
 import org.junit.Test;
+import util.ArrayUtils;
 
 /**
  * <pre>
@@ -16,22 +17,16 @@ public class TestInsertSort {
     @Test
     public void testInsertSort() {
         int[] array = new int[]{5, 1, 2, 8, 4, 9, 6, 3, 7};
-        StringBuilder sb = new StringBuilder();
-        InsertSort.insertSort(array);
-        for (int i : array) {
-            sb.append(i);
-        }
-        Assert.assertEquals("123456789", sb.toString());
+        InsertSort.insertSort(array, array.length);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        Assert.assertEquals(true, ordered);
     }
 
     @Test
     public void testInsertSort2() {
         int[] array = new int[]{2, 1};
-        StringBuilder sb = new StringBuilder();
-        InsertSort.insertSort(array);
-        for (int i : array) {
-            sb.append(i);
-        }
-        Assert.assertEquals("12", sb.toString());
+        InsertSort.insertSort(array, array.length);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        Assert.assertEquals(true, ordered);
     }
 }

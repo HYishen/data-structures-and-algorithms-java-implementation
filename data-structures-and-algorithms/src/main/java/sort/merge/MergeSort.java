@@ -10,12 +10,12 @@ package sort.merge;
  */
 public class MergeSort {
 
-    public static void mergeSort(int[] array) {
-        if (array == null || array.length <= 1) {
+    public static void mergeSort(int[] array, int length) {
+        if (array == null || length <= 1) {
             return;
         }
-        int[] tempArray = new int[array.length];
-        mergeSortOperate(array, tempArray, 0, array.length - 1);
+        int[] tempArray = new int[length];
+        mergeSortOperate(array, tempArray, 0, length - 1);
     }
 
     private static void mergeSortOperate(int[] array, int[] tempArray, int startIndex, int endIndex) {

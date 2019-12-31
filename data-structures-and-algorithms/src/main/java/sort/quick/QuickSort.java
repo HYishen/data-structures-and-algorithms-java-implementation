@@ -9,13 +9,13 @@ package sort.quick;
  * @version 1.00.00
  */
 public class QuickSort {
-    public static void quickSort(int[] array) {
-        if (array == null || array.length <= 1) {
+    public static void quickSort(int[] array, int length) {
+        if (array == null || length <= 1) {
             return;
         }
-        int separateIndex = partition(array, 0, array.length - 1);
+        int separateIndex = partition(array, 0, length - 1);
         quickSortOperate(array, 0, separateIndex);
-        quickSortOperate(array, separateIndex, array.length - 1);
+        quickSortOperate(array, separateIndex, length - 1);
     }
 
     public static void quickSortOperate(int[] array, int startIndex, int endIndex) {

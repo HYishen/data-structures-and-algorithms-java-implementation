@@ -2,6 +2,7 @@ package sort.bubble;
 
 import org.junit.Assert;
 import org.junit.Test;
+import util.ArrayUtils;
 
 /**
  * <pre>
@@ -15,22 +16,16 @@ public class TestBubbleSort {
     @Test
     public void testBubbleSort() {
         int[] array = new int[]{4, 6, 5, 3, 2, 1, 8, 9, 7};
-        BubbleSort.bubbleSort(array);
-        StringBuilder sb = new StringBuilder();
-        for (int i : array) {
-            sb.append(i);
-        }
-        Assert.assertEquals("123456789", sb.toString());
+        BubbleSort.bubbleSort(array, array.length);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        Assert.assertEquals(true, ordered);
     }
 
     @Test
     public void testBubbleSort2() {
         int[] array = new int[]{2, 1};
-        StringBuilder sb = new StringBuilder();
-        BubbleSort.bubbleSort(array);
-        for (int i : array) {
-            sb.append(i);
-        }
-        Assert.assertEquals("12", sb.toString());
+        BubbleSort.bubbleSort(array, array.length);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        Assert.assertEquals(true, ordered);
     }
 }
