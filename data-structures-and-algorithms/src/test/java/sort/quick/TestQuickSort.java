@@ -2,8 +2,10 @@ package sort.quick;
 
 import org.junit.Assert;
 import org.junit.Test;
+import sort.merge.MergeSort;
 import util.ArrayUtils;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -33,14 +35,28 @@ public class TestQuickSort {
 
     @Test
     public void testQuickSortRandom() {
-        int length = 100;
+        int length = 10000000;
         Random random = new Random();
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
-            int r = 90000 + random.nextInt() % 10001;
+            int r = 9000000 + random.nextInt() % 1000001;
             array[i] = r;
         }
         QuickSort.quickSort(array, length);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, length);
+        Assert.assertEquals(true, ordered);
+    }
+
+    @Test
+    public void testQuickSortRandom2() {
+        int length = 10000000;
+        Random random = new Random();
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            int r = 9000000 + random.nextInt() % 1000001;
+            array[i] = r;
+        }
+        Arrays.sort(array);
         boolean ordered = ArrayUtils.isArrayOrderedInASC(array, length);
         Assert.assertEquals(true, ordered);
     }

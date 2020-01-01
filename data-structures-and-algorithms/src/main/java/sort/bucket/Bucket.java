@@ -1,6 +1,6 @@
 package sort.bucket;
 
-import sort.quick.QuickSort;
+import sort.merge.MergeSort;
 
 import java.util.Arrays;
 
@@ -30,7 +30,7 @@ public class Bucket {
     }
 
     public void sort() {
-        QuickSort.quickSort(this.array, this.size);
+        MergeSort.mergeSort(this.array, this.size);
     }
 
     public void add(int data) {
