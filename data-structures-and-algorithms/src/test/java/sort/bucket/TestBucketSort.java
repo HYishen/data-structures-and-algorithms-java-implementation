@@ -1,6 +1,10 @@
 package sort.bucket;
 
+import org.junit.Assert;
 import org.junit.Test;
+import util.ArrayUtils;
+
+import java.util.Random;
 
 /**
  * <pre>
@@ -12,19 +16,24 @@ import org.junit.Test;
  */
 public class TestBucketSort {
     @Test
-    public void testBucket() {
-        int[] array = new int[2];
-        Bucket bucket = new Bucket(array, 0, 5, 10);
-        bucket.add(3);
-        bucket.add(1);
-        bucket.add(2);
-        bucket.add(4);
-        bucket.add(5);
-        int[] a = bucket.getArray();
-        int size = bucket.getSize();
-        for (int i = 0; i < size; i++) {
-            System.out.println(a[i]);
+    public void testBucketSort() {
+        int[] array = new int[]{5, 1, 2, 8, 4, 9, 6, 3, 7};
+        BucketSort.bucketSort(array, array.length, 2);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        Assert.assertEquals(true, ordered);
+    }
+
+    @Test
+    public void testBucketSortInRandom() {
+        int length = 100;
+        Random random = new Random();
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            int r = 90000 + random.nextInt() % 10001;
+            array[i] = r;
         }
-        System.out.println("length: " + a.length);
+        BucketSort.bucketSort(array, length, 100);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, length);
+        Assert.assertEquals(true, ordered);
     }
 }

@@ -12,7 +12,10 @@ import java.util.List;
  * @version 1.00.00
  */
 public class BucketSort {
-    public static void bucketSort(int[] array, int length, int separateCount) {
+    public static void bucketSort(int[] array, int length, int separateRange) {
+        if (separateRange <= 0) {
+            throw new RuntimeException("Please enter argument \"separateRange\" with positive integer.");
+        }
         if (array == null || length <= 1) {
             return;
         }
@@ -26,27 +29,28 @@ public class BucketSort {
                 min = array[i];
             }
         }
-        bucketSortOperate(array, length, max, min, separateCount);
+        bucketSortOperate(array, length, max, min, separateRange);
     }
 
-    public static void bucketSortOperate(int[] array, int length, int max, int min, int separateCount) {
-        List<Bucket> bucketList = new ArrayList<>(separateCount);
-        int bucketRange = (max - min) / separateCount;
-        int bucketSize = length / separateCount;
+    public static void bucketSortOperate(int[] array, int length, int max, int min, int separateRange) {
+        int bucketCount = (max - min) / separateRange + 1;
+        List<Bucket> bucketList = new ArrayList<>(bucketCount);
         int start = min;
-        int end = min + bucketRange;
-        while (start <= max && end <= max) {
-            Bucket bucket = new Bucket(new int[bucketSize], 0, start, end);
+        int end = min + separateRange;
+        while (start <= max) {
+            Bucket bucket = new Bucket(new int[length], 0, start, end);
             bucketList.add(bucket);
-            start += bucketRange + 1;
-            end += start + bucketRange;
+            start = end;
+            end = start + separateRange;
         }
         for (int i = 0; i < length; i++) {
-            bucketList.get(array[i] / separateCount).add(array[i]);
+            bucketList.get((array[i] - min) / separateRange).add(array[i]);
+        }
+        for (Bucket bucket : bucketList) {
+            bucket.sort();
         }
         int index = 0;
         for (Bucket bucket : bucketList) {
-            bucket.sort();
             int[] a = bucket.getArray();
             int size = bucket.getSize();
             for (int i = 0; i < size; i++) {
