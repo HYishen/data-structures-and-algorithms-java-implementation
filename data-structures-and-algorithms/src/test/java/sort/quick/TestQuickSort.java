@@ -18,8 +18,8 @@ import java.util.Random;
  */
 public class TestQuickSort {
     @Test
-    public void testQuickSort() {
-        int[] array = new int[]{5, 1, 2, 8, 4, 9, 6, 3, 7};
+    public void testQuickSort1() {
+        int[] array = new int[]{1};
         QuickSort.quickSort(array, array.length);
         boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
         Assert.assertEquals(true, ordered);
@@ -27,6 +27,22 @@ public class TestQuickSort {
 
     @Test
     public void testQuickSort2() {
+        int[] array = new int[]{2, 2};
+        QuickSort.quickSort(array, array.length);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        Assert.assertEquals(true, ordered);
+    }
+
+    @Test
+    public void testQuickSort3() {
+        int[] array = new int[]{1, 2};
+        QuickSort.quickSort(array, array.length);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        Assert.assertEquals(true, ordered);
+    }
+
+    @Test
+    public void testQuickSort4() {
         int[] array = new int[]{2, 1};
         QuickSort.quickSort(array, array.length);
         boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
@@ -35,7 +51,7 @@ public class TestQuickSort {
 
     @Test
     public void testQuickSortRandom() {
-        int length = 10000000;
+        int length = 1000000;
         Random random = new Random();
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
@@ -49,7 +65,7 @@ public class TestQuickSort {
 
     @Test
     public void testQuickSortRandom2() {
-        int length = 10000000;
+        int length = 1000000;
         Random random = new Random();
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {

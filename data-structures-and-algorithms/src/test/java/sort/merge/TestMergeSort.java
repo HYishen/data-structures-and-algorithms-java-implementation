@@ -16,8 +16,8 @@ import java.util.Random;
  */
 public class TestMergeSort {
     @Test
-    public void testMergeSort() {
-        int[] array = new int[]{5, 1, 2, 8, 4, 9, 6, 3, 7};
+    public void testMergeSort1() {
+        int[] array = new int[]{1};
         MergeSort.mergeSort(array, array.length);
         boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
         Assert.assertEquals(true, ordered);
@@ -25,6 +25,22 @@ public class TestMergeSort {
 
     @Test
     public void testMergeSort2() {
+        int[] array = new int[]{2, 2};
+        MergeSort.mergeSort(array, array.length);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        Assert.assertEquals(true, ordered);
+    }
+
+    @Test
+    public void testMergeSort3() {
+        int[] array = new int[]{1, 2};
+        MergeSort.mergeSort(array, array.length);
+        boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        Assert.assertEquals(true, ordered);
+    }
+
+    @Test
+    public void testMergeSort4() {
         int[] array = new int[]{2, 1};
         MergeSort.mergeSort(array, array.length);
         boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
@@ -33,7 +49,7 @@ public class TestMergeSort {
 
     @Test
     public void testMergeSortRandom() {
-        int length = 10000000;
+        int length = 1000000;
         Random random = new Random();
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
