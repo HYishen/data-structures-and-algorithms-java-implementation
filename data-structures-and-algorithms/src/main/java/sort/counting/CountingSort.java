@@ -22,7 +22,8 @@ public class CountingSort {
             countArray[i] += countArray[i - 1];
         }
         int[] temp = new int[length];
-        for (int i = 0; i < length; i++) {
+        // 注意,这里只能由后往前遍历数组array,不然该排序就不是稳定排序了
+        for (int i = length - 1; i >= 0; i--) {
             int countIdx = array[i] - min;
             int tempIdx = --countArray[countIdx];
             temp[tempIdx] = array[i];
