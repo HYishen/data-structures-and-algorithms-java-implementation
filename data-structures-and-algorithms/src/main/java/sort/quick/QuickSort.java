@@ -14,7 +14,8 @@ public class QuickSort {
             return;
         }
         int separateIndex = partition(array, 0, length - 1);
-        quickSortOperate(array, 0, separateIndex);
+        // 一定要separateIndex - 1，不然可能会出现无限循环
+        quickSortOperate(array, 0, separateIndex - 1);
         quickSortOperate(array, separateIndex, length - 1);
     }
 
