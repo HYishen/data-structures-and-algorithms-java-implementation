@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import util.ArrayUtils;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -41,9 +42,10 @@ public class TestInsertSort {
 
     @Test
     public void testInsertSort4() {
-        int[] array = new int[]{2, 1};
+        int[] array = new int[]{2, 1, 3, 6, 4};
         InsertSort.insertSort(array, array.length);
         boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        ArrayUtils.printArray(array);
         Assert.assertEquals(true, ordered);
     }
 

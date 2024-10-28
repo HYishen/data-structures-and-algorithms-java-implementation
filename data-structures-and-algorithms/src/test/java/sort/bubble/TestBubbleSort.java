@@ -41,9 +41,10 @@ public class TestBubbleSort {
 
     @Test
     public void testBubbleSort4() {
-        int[] array = new int[]{2, 1};
+        int[] array = new int[]{2, 1, 3, 6, 4};
         BubbleSort.bubbleSort(array, array.length);
         boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
+        ArrayUtils.printArray(array);
         Assert.assertEquals(true, ordered);
     }
 

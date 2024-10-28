@@ -43,8 +43,9 @@ public class TestQuickSort {
 
     @Test
     public void testQuickSort4() {
-        int[] array = new int[]{2, 1};
+        int[] array = new int[]{2, 1, 3, 6, 4};
         QuickSort.quickSort(array, array.length);
+        ArrayUtils.printArray(array);
         boolean ordered = ArrayUtils.isArrayOrderedInASC(array, array.length);
         Assert.assertEquals(true, ordered);
     }

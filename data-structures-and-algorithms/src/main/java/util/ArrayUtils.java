@@ -22,4 +22,18 @@ public class ArrayUtils {
         }
         return flag;
     }
+
+    public static void printArray(int[] array) {
+        if (array == null) {
+            System.out.println(array);
+        }
+        StringBuilder s = new StringBuilder();
+        s.append("[");
+        for (int i : array) {
+            s.append(i).append(", ");
+        }
+        s.delete(s.length()-2, s.length());
+        s.append("]");
+        System.out.println(s);
+    }
 }

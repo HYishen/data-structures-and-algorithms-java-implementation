@@ -13,19 +13,17 @@ public class BubbleSort {
         if (array == null || length <= 1) {
             return;
         }
-        for (int i = length; i > 1; i--) {
-            // 提前退出冒泡排序循环标志
-            boolean flag = false;
-            for (int j = 0; j < i - 1; j++) {
+        for (int i = length - 1; i > 0; i--) {
+            boolean hasSwap = false;
+            for (int j = 0; j < i; j++) {
                 if (array[j] > array[j + 1]) {
-                    int temp = array[j];
+                    int tmp = array[j];
                     array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                    flag = true;
+                    array[j + 1] = tmp;
+                    hasSwap = true;
                 }
             }
-            // 没有数据交换则退出循环
-            if (!flag) {
+            if (!hasSwap) {
                 break;
             }
         }

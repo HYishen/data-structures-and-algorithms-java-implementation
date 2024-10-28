@@ -14,6 +14,7 @@ public class InsertSort {
         if (array == null || length <= 1) {
             return;
         }
+
         for (int i = 1; i < length; i++) {
             int j = i - 1;
             int value = array[i];
